@@ -36,19 +36,19 @@ def lambda_handler(event, context):
         except IndexError:
             retention_days = 7
 
-        for dev in instance['BlockDeviceMappings']:
-            if dev.get('Ebs', None) is None:
-                continue
-            vol_id = dev['Ebs']['VolumeId']
-            print "Found EBS volume %s on instance %s" % (
-                vol_id, instance['InstanceId'])
+        #for dev in instance['BlockDeviceMappings']:
+        #    if dev.get('Ebs', None) is None:
+        #        continue
+        #    vol_id = dev['Ebs']['VolumeId']
+        #    print "Found EBS volume %s on instance %s" % (
+        #        vol_id, instance['InstanceId'])
 
-            snap = ec.create_snapshot(
-                VolumeId=vol_id,
-            )
+            #snap = ec.create_snapshot(
+            #    VolumeId=vol_id,
+            #)
 
-            create_image(instance_id, name, description=None, no_reboot=False, block_device_mapping=None, dry_run=False)
-            DryRun, InstanceId, Name, Description, NoReboot, BlockDeviceMappings
+            #create_image(instance_id, name, description=None, no_reboot=False, block_device_mapping=None, dry_run=False)
+            # DryRun, InstanceId, Name, Description, NoReboot, BlockDeviceMappings
             create_time = datetime.datetime.now()
             create_fmt = create_time.strftime('%Y-%m-%d--%H-%M-%S')
 
