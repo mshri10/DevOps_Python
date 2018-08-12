@@ -13,6 +13,7 @@ client_ec2 = session.client('ec2',region_name='us-west-2')
 # Put Instance Ids
 Instance_Ids = ['i-6a','i-ce9','i-034e1']
 
+# Add slack webhook
 slack_webhook_url = 'https://hooks.slack.com/services/T123131h'
 start_color = '#00FF00'
 alert_icon ='https://www.cloudera.com/content/dam/www/Downloads/Product%20Icons/xManager_Icon.png.pagespeed.ic.p93WiflsDG.png'
